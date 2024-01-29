@@ -21,3 +21,23 @@ int main()
 
 Задача 2: Задайте строку, содержащую латинские буквы в обоих регистрах. Сформируйте строку, в которой все заглавные буквы заменены на строчные.
 
+void task(char word[100])
+{
+    for (int i = 0;i < strlen(word);++i)
+    {
+        if ('A' <= word[i] && word[i] <= 'Z')
+            word[i] = word[i] - 'A' + 'a';
+        else if ('a' <= word[i] && word[i] <= 'z')
+        {
+            word[i] = word[i] - 'a' + 'A';
+        }
+    }
+}
+
+void main()
+{
+    char word[100];
+    cin >> word;
+    task(word);
+    cout << word;
+}
